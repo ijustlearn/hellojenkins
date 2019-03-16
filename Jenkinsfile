@@ -1,4 +1,4 @@
-pipelinexzc {asdaszxc
+pipeline {
     agent any
     stages {
         stage('build') {
