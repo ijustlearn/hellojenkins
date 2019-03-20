@@ -9,5 +9,18 @@ pipeline {
                 '''
             }
         }
+        stage('example'){
+            input{
+                message "should me continue?"
+                ok "yes,we should"
+                submitter "alice,bob"
+                parameters{
+                    string(name:"PERSON", defaultValue:"mr jenkins", description: 'who should i say hello to ?')
+                }
+            }
+            steps{
+                echo "hello ${PERSON} ,nice to meet you ."
+            }
+        }
     }
 }
